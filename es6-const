@@ -1,0 +1,29 @@
+## es6 - const
+/* const 命令 */
+    // 基本用法
+    // const 声明一个只读的常量，一旦声明，常量的值就不能改变。
+    const PI = 3.1415;
+    console.log(PI)
+    // PI = 3; // 改变常量的值会报错。
+    // const foo;
+    // const声明的常量不得改变值。这意味着，const一旦声明常量，就必须立即初始化，不能留到以后赋值。
+    // 顶层对象在浏览器环境中指的是 window 对象。在node 环境中指的是global对象。
+    // 在ES5中，顶层对象的属性与全局变量是等价的。
+    // 在ES6 中规定 let,const,class命令声明的全局变量不属于顶层对象的属性。
+    var a = 1
+    console.log(window.a) // 1
+    console.log(this.a) // 1
+    console.log(self.a)
+    // 在浏览器中顶层对象是 window .但是 self 也指向顶层对象。但是 Node中没有 self .
+    // 在 Node 中，顶层对象是 global .但是其他环境都不支持。
+    // Es6
+    let b = 1;
+    console.log(window.b) // undefined
+    // 上面的代码中，全局变量 a 是由 var命令声明，所以它是顶层对象的属性。
+    // 全局变量 b 是由 let 声明的。所以它不是顶层对象的属性。返回 undefined.
+    /*
+    * 在全局环境中，this会返回顶层对象。但是在Node 模块和 ES6 模块中，this 返回的是当前模块。
+    * 对于函数中的this.如果函数不是作为一个对象的方法运行，而是单纯作为函数运行，this.会指向顶层对象。但是在严格模式下，this.会返回undefined
+    *
+    *
+    * */
